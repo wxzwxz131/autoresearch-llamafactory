@@ -83,7 +83,7 @@ from langchain_core.messages import SystemMessage, HumanMessage
 
 def build_llm() -> ChatOpenAI:
     return ChatOpenAI(
-        api_key=os.getenv("API_KEY", "sk-tp-OKlF6MD0w7UEEArAqAG1Ba4zhs7AqwxBYBrVCo8eaA1CbfWx"),
+        api_key=os.getenv("API_KEY", ""),
         base_url=os.getenv("BASE_URL", "https://api.lkeap.cloud.tencent.com/plan/v3"),
         model=os.getenv("MODEL_ID", "glm-5.1"),
         max_tokens=4096,
