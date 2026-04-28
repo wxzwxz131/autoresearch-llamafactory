@@ -26,6 +26,20 @@ autoresearch-llamafactory/
 ├── results.tsv                             ← Agent 维护：实验记录（首次运行后自动创建）
 └── README.md                               ← 本文件
 ```
+## 直接开始
+
+直接调用 autoresearch.ipynb
+
+别忘了配置agent模型配置（agent.py）
+'''
+def build_llm() -> ChatOpenAI:
+    return ChatOpenAI(
+        api_key=os.getenv("API_KEY", ""),
+        base_url=os.getenv("BASE_URL", "https://api.lkeap.cloud.tencent.com/plan/v3"),
+        model=os.getenv("MODEL_ID", "glm-5.1"),
+        max_tokens=4096,
+    )
+'''
 
 ## 快速开始
 
