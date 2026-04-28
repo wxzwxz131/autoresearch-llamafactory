@@ -55,6 +55,17 @@ llamafactory-cli train examples/train_lora/qwen3_lora_sft.yaml
 
 如需换成其他模型，同时修改这三个参数与 `output_dir`。LLaMA-Factory 支持的内置数据集见其 [data/README.md](https://github.com/hiyouga/LLaMA-Factory/blob/main/data/README.md)。
 
+调用的agent模型配置（agent.py）
+'''
+def build_llm() -> ChatOpenAI:
+    return ChatOpenAI(
+        api_key=os.getenv("API_KEY", ""),
+        base_url=os.getenv("BASE_URL", "https://api.lkeap.cloud.tencent.com/plan/v3"),
+        model=os.getenv("MODEL_ID", "glm-5.1"),
+        max_tokens=4096,
+    )
+'''
+
 ### 3. 验证环境
 
 ```bash
